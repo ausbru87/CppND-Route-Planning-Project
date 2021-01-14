@@ -64,7 +64,8 @@ void NodeSort(std::vector<RouteModel::Node*> *nodes) {
 
 RouteModel::Node *RoutePlanner::NextNode() {
     NodeSort(&open_list);
-    RouteModel::Node *next_node = open_list[0];
+    RouteModel::Node *next_node = open_list.back();
+    open_list.pop_back();
     return next_node;
 
 
